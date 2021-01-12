@@ -1,0 +1,61 @@
+{% extends 'search/base.html' %}
+
+{% block title %}
+    Home
+{% endblock title %}
+    
+
+{% block body %}
+    
+<div class="container">
+    <form action="/search" method="GET">
+        <!-- {% csrf_token %} -->
+        <div class="searchdiv">
+            
+            {% if givenSearch %}
+                <input type="text" name="search" id="searchinput" class="searchinput" placeholder="Search Here" value="{{givenSearch}}" >
+            {% else %}
+                <input type="text" name="search" id="searchinput" class="searchinput" placeholder="Search Here" >
+            {% endif %}
+                
+            <button class="btn btn-primary">Search</button>
+        </div>
+        
+    </form>
+
+    <h5 class="alert alert-dark mt-2 mb-2">Your Search Results for: '{{givenSearch}}'</h5>
+    
+    {% if searchResult %}
+    
+    {% for data in searchResult %}
+        <div class="card mt-3">
+            <div class="card-header">{{data.name}}</div>
+            <div class="card-body">{{data.created}}</div>
+        </div>
+    {% endfor %}
+        
+    {% else %}
+
+    <h5 class="alert alert-danger mt-4 mb-4 m-4">No Results Found</h5>
+        
+    {% endif %}
+    
+
+        
+        
+</div>
+
+
+
+{% endblock body %}
+    
+
+{% block scripts %}
+<!-- <script>
+    $(document).ready(function(){
+    window.history.replaceState('','',window.location.href)
+    });
+ </script> -->
+
+{% endblock scripts %}
+    

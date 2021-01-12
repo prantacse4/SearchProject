@@ -1,0 +1,35 @@
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.searchdiv {
+    text-align: center;
+    background: #59b07c;
+    margin-top: 3rem;
+    padding: 1rem;
+}
+
+.searchinput {
+    border-radius: .2rem;
+    border: 0px;
+    padding-left: .5rem;
+    width: 20rem;
+    color: red;
+    background: white;
+    border: .1rem solid rgb(255, 255, 255);
+    font-size: 1.2rem;
+    margin-top: 0rem;
+    vertical-align: middle;
+}
+.searchinput:focus{
+    border: none;
+
+    border: .1rem solid rgb(112, 202, 255);
+}
+.searchinput::placeholder{
+    color: red;
+}
